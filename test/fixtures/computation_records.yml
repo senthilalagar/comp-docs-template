@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  dor: 2017-08-25
+  ag_no: MyString
+  amount_comm: 1
+  comm_value: 1
+  payment_date: 2017-08-25
+
+two:
+  name: MyString
+  dor: 2017-08-25
+  ag_no: MyString
+  amount_comm: 1
+  comm_value: 1
+  payment_date: 2017-08-25

@@ -1,0 +1,3 @@
+class ComputationRecord < ApplicationRecord
+
+end

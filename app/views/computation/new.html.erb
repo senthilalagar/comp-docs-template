@@ -1,0 +1,27 @@
+<%= form_for @computation , url: computation_index_path do |f|%>
+<div class="form-group" >
+<%= f.label "Name" %>
+<%= f.text_field :name , class: "form_control" %>
+</div>
+<div class="form-group" >
+<%= f.label "DOR" %>
+<%= f.text_field :dor , class: "form_control" %>
+</div>
+<div class="form-group" >
+<%= f.label "AG NO" %>
+<%= f.text_field :ag_no , class: "form_control" %>
+</div>
+<div class="form-group" >
+<%= f.label "Amount Computed" %>
+<%= f.text_field :amount_comm , class: "form_control" %>
+</div>
+<div class="form-group" >
+<%= f.label "Commutated Value" %>
+<%= f.text_field :comm_value , class: "form_control" %>
+</div>
+<div class="form-group" >
+<%= f.label "Payment Date" %>
+<%= f.text_field :payment_date , class: "form_control" %>
+</div>
+<%= f.submit "Create" , class: "btn form_control" %>
+<% end %>
