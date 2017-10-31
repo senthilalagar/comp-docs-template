@@ -20,6 +20,8 @@ class TemplatesController < ApplicationController
   end
 
   def update
+    @template = Template.find(params[:id])
+    @template.update(template_params)
   end
 
   private
