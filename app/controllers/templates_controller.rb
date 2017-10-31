@@ -8,12 +8,18 @@ class TemplatesController < ApplicationController
 
   def show
     @templates = Template.all
-    binding.pry
   end
 
   def create
     @template = Template.create(template_params)
     redirect_to :back
+  end
+
+  def edit
+    @template = Template.find(params[:id])
+  end
+
+  def update
   end
 
   private

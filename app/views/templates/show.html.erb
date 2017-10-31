@@ -5,13 +5,15 @@
       <tr>
         <th>Title</th>
         <th>Body</th>
+        <th>   </th>
       </tr>
     </thead>
     <tbody>
       <% @templates.each do |f| %>
       <tr>
         <td><%= f.title %></td>
-        <td><%= f.body %></td>
+        <td><%#= f.body %></td>
+        <td><%= link_to '<button type="button">Edit</button>'.html_safe, edit_template_path(f.id) %></td>
       </tr>
       <% end %>
     </tbody>
