@@ -7,17 +7,18 @@ class ComputationController < ApplicationController
   	@record = ComputationRecord.create(computation_params)
   	@record.save
   	create_format
+    send_file(File.join(ENV["HOME"]+"/"+@record.name))
   end
 
   def create_format
-  		doc = Docx::Document.open('/home/senthil/Desktop/format.docx')
+  		doc = Template.find_by(title: "new1").body
   		today = Date.today
-  		html_content = doc.to_html
-  		binding.pry
-  		my_html = html_content.gsub("{{date}}", "today").gsub("{{ppr_no}}", "#{@record.ag_no}").gsub("{{dor}}", "#{@record.dor}").gsub("{{name}}", "#{@record.name}").gsub("amount", "#{@record.amount_comm}").gsub("/n", "").gsub("\n","").gsub(/\n/,"").gsub(/\\n/,"")
+  		html_content = doc
+  		my_html = html_content.gsub("{{date}}", today.to_s).gsub("{{ppr_no}}", "#{@record.ag_no}").gsub("{{dor}}", "#{@record.dor}").gsub("{{name}}", "#{@record.name}").gsub("amount", "#{@record.amount_comm}").gsub("/n", "").gsub("\n","").gsub(/\n/,"").gsub(/\\n/,"")
 		html = my_html.chomp.html_safe.gsub("\n","")
 		pdf = WickedPdf.new.pdf_from_string(html)
-		save_path = Rails.root.join('filename.pdf')
+		save_path = Rails.root.join(@record.name+'.pdf')
+    save_path = ENV["HOME"]+"/"+@record.name
 		File.open(save_path, 'wb') do |file|
   			file << pdf
 		end

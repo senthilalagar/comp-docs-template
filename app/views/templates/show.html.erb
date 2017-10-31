@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>List of Tempaltes</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @templates.each do |f| %>
+      <tr>
+        <td><%= f.title %></td>
+        <td><%= f.body %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

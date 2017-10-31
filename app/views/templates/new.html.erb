@@ -1,0 +1,56 @@
+<div class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1">
+                  Template Creation
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+              <%= form_for @template, url: "/templates" , method: :post do |f|%>
+                <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Title</label>
+                                  <%= f.text_field :title , class: "form_control" %>
+                            <!-- <input type="text" class="form-control" id="name" placeholder="Enter title" required="required" /> -->
+                        </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Body</label>
+                                <%= f.text_area :body ,  :rows => 4, :cols => 50, class: "form_control" %>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                            Send Message</button>
+                    </div>
+                </div>
+                </form>
+                <% end %>
+            </div>
+        </div>
+<style>
+.jumbotron {
+background: #358CCE;
+color: #FFF;
+border-radius: 0px;
+}
+.jumbotron-sm { padding-top: 24px;
+padding-bottom: 24px; }
+.jumbotron small {
+color: #FFF;
+}
+.h1 small {
+font-size: 24px;
+}
+</style>
