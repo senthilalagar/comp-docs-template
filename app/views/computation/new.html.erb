@@ -4,7 +4,6 @@
 <html lang="en">
     <head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
@@ -71,7 +70,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <%= f.text_field :payment_date , class: "form_control", placeholder: "Select Date" %>
+                  <%= f.text_field :payment_date , class: "form_control datepicker", placeholder: "Select Date" %>
 								</div>
 							</div>
 						</div>
@@ -87,12 +86,16 @@
     <% end %>
 
 		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
 	</body>
 </html>
-
+<script>
+$( document ).ready(function() {
+ $('.datepicker').datepicker({
+    format: 'mm-dd-yyyy',
+});
+});
+</script>
 <style>
 /*
 /* Created by Filipe Pina
